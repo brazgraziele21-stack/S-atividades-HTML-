@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Seção de Destaques</title>
+</head>
+<body>
+
+    <div id="destaques" style="background-color: #f0f0f0;">
+        <h3>Melhores Ofertas</h3>
+
+        <ol>
+            <li>Mochila</li>
+            <li>Caderno</li>
+            <li>Livro</li>
+        </ol>
+    </div>
+
+</body>
+</html>
