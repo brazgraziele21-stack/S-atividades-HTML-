@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Hierarquia de Títulos na Notícia</title>
+</head>
+<body>
+
+    <article>
+        <h2>Evento gratuito vai falar sobre segurança da Inteligência Artificial no Brasil</h2>
+        <h3>Encontro online reúne especialistas para falar sobre riscos e oportunidades da IA</h3>
+
+        <p>Um evento sobre segurança da inteligência artificial vai acontecer de forma online no <strong>Brasil</strong>, reunindo especialistas que vão falar sobre como a IA afeta a sociedade, a economia e os governos.</p>
+        <p>O encontro vai usar como base um estudo internacional sobre o tema, feito com a ajuda de mais de 100 especialistas de vários países. A ideia é discutir como o Brasil pode se preparar para lidar com os riscos e as oportunidades dessa tecnologia.</p>
+    </article>
+
+</body>
+</html>
