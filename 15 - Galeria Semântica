@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria Semântica</title>
+</head>
+<body>
+
+    <section>
+        <h2>Galeria</h2>
+
+        <figure>
+            <img src="https://w7.pngwing.com/pngs/249/407/png-transparent-minnie-mouse-cat-marie-kitten-aristogatos-cute-cat-marie-illustration-white-mammal-cat-like-mammal-thumbnail.png" width="150" height="150" style="object-fit: cover;" alt="Ilustração de uma gatinha branca fofa, sentada, com um laço rosa no pescoço e outro na cabeça, olhos grandes e expressivos, bigodes e rabo enrolado ao lado do corpo, ao lado de um pequeno coração rosa">
+            <figcaption>Gatinha branca fofa, sentada, usando laços rosa na cabeça e no pescoço, com olhos grandes e expressivos.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://img.magnific.com/vetores-premium/telemaque-cute-dog-sticker-cartoon-style-no-background-simple-v-fbb698a9a6d9440c890c3beec2781a04png-1-1-converti_853204-2.jpg" width="150" height="150" style="object-fit: cover;" alt="Sticker de um filhote de cachorro sentado, com pelagem marrom e branca, orelhas grandes e caídas, olhos grandes e focinho preto, sobre um fundo circular azul">
+            <figcaption>Filhote de cachorro sentado, com pelagem marrom e branca, orelhas grandes e caídas, em estilo sticker.</figcaption>
+        </figure>
+    </section>
+
+</body>
+</html>
