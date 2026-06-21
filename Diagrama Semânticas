@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama das tags semânticas do HTML</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 30px;
+    }
+
+    .marcador-body {
+        font-family: monospace;
+        font-size: 14px;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .caixa {
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin-bottom: 0;
+    }
+
+    .titulo-tag {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .texto-explicacao {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 4px 0;
+    }
+
+    .exemplo {
+        font-size: 14px;
+        font-style: italic;
+        margin-top: 8px;
+    }
+
+    .seta {
+        text-align: center;
+        font-size: 22px;
+        color: #888;
+        margin: 4px 0;
+    }
+
+    /* Cores de cada tag, parecido com o diagrama */
+    .header-box   { background-color: #E6F1FB; border: 1px solid #378ADD; }
+    .nav-box      { background-color: #E1F5EE; border: 1px solid #1D9E75; }
+    .main-box     { background-color: #EEEDFE; border: 1px solid #7F77DD; padding-bottom: 20px; }
+    .section-box  { background-color: #FAECE7; border: 1px solid #D85A30; }
+    .article-box  { background-color: #FAEEDA; border: 1px solid #BA7517; margin-bottom: 16px; }
+    .aside-box    { background-color: #FBEAF0; border: 1px solid #D4537E; }
+    .footer-box   { background-color: #F1EFE8; border: 1px solid #888780; }
+
+    /* Layout para colocar section e aside lado a lado dentro do main */
+    .conteudo-main {
+        display: flex;
+        gap: 20px;
+        margin-top: 16px;
+    }
+
+    .coluna-section {
+        flex: 2;
+    }
+
+    .coluna-aside {
+        flex: 1;
+    }
+</style>
+</head>
+<body>
+
+    <p class="marcador-body">&lt;body&gt;</p>
+
+    <div class="caixa header-box">
+        <div class="titulo-tag">header</div>
+        <p class="texto-explicacao">É a entrada da página, a primeira coisa que aparece pra quem visita o site, e fica antes de qualquer outro conteúdo. Apresenta o site e dá a ele uma identidade visual logo de cara.</p>
+        <p class="exemplo">ex: logo, título, slogan, campo de busca</p>
+    </div>
+
+    <div class="seta">&#8595;</div>
+
+    <div class="caixa nav-box">
+        <div class="titulo-tag">nav</div>
+        <p class="texto-explicacao">Agrupa os links que levam o usuário a outras partes do site ou da própria página. Ajuda a pessoa a se locomover e achar o que procura sem precisar rolar a página inteira.</p>
+        <p class="exemplo">ex: menu, índice de assuntos, paginação</p>
+    </div>
+
+    <div class="seta">&#8595;</div>
+
+    <div class="caixa main-box">
+        <div class="titulo-tag">main</div>
+        <p class="texto-explicacao">É o conteúdo central, o motivo da página existir. Só pode ter um main por página, e nada que já apareceu no header ou no footer deve se repetir aqui dentro.</p>
+
+        <div class="conteudo-main">
+            <div class="coluna-section">
+                <div class="caixa section-box">
+                    <div class="titulo-tag">section</div>
+                    <p class="texto-explicacao">Separa um bloco de conteúdo que tem um tema em comum, geralmente acompanhado de um título próprio acima dele.</p>
+                    <p class="exemplo">ex: "sobre nós", depoimentos, produtos em destaque</p>
+
+                    <div class="caixa article-box">
+                        <div class="titulo-tag">article 1</div>
+                        <p class="texto-explicacao">Conteúdo independente, que faria sentido mesmo se você tirasse ele do site e colocasse em outro lugar sozinho.</p>
+                        <p class="exemplo">ex: post de blog, notícia, pergunta de FAQ</p>
+                    </div>
+
+                    <div class="caixa article-box">
+                        <div class="titulo-tag">article 2</div>
+                        <p class="texto-explicacao">Mesma lógica do article 1: um conteúdo completo por si só, dentro da mesma section por terem o mesmo tema.</p>
+                        <p class="exemplo">ex: outro post, outra notícia, outro item da listagem</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="coluna-aside">
+                <div class="caixa aside-box">
+                    <div class="titulo-tag">aside</div>
+                    <p class="texto-explicacao">Conteúdo relacionado, mas secundário. Não é o foco principal, só complementa o que já existe.</p>
+                    <p class="exemplo">
+                        ex:<br>
+                        - "você sabia?"<br>
+                        - link relacionado<br>
+                        - biografia do autor<br>
+                        - nota explicativa<br>
+                        - propaganda
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seta">&#8595;</div>
+
+    <div class="caixa footer-box">
+        <div class="titulo-tag">footer</div>
+        <p class="texto-explicacao">É o rodapé, a última parte da página. Fecha o conteúdo trazendo informações que não são o foco principal, mas que ainda são úteis pro usuário ter à mão.</p>
+        <p class="exemplo">ex: direitos autorais, links, redes sociais</p>
+    </div>
+
+    <p class="marcador-body">&lt;/body&gt;</p>
+
+</body>
+</html>
