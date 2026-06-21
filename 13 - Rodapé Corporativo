@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Rodapé Corporativo</title>
+</head>
+<body>
+
+    <footer>
+        <p>Desenvolvido por Grazi Braz <br>
+        Contato: <a href="mailto:java.php21@gmail.com">java.php21@gmail.com</a></p>
+        <p><span style="font-weight: bold">2026</span></p>
+    </footer>
+
+</body>
+</html>
