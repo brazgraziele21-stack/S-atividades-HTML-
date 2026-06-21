@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividades de HTML</title>
+</head>
+<body>
+
+    <!--Exercício 10-->
+    <!-- Esta página mostra como usar as tags semânticas do HTML: header, nav, main, section, article, aside e footer, cada uma organizando uma parte do conteúdo. -->
+    <header id="topo">
+        <h1>Entendendo as Tags Semânticas do HTML</h1>
+        <p>Um guia simples pra entender pra que serve cada uma</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Header e Footer</a></li>
+            <li><a href="#">Nav</a></li>
+            <li><a href="#">Main, Section e Article</a></li>
+            <li><a href="#">Aside</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>As tags principais</h2>
+
+            <article>
+                <h3>Header e Footer</h3>
+                <p>O <strong>header</strong> é tipo a "entrada" da página. É onde geralmente fica o título, o logo, alguma frase de efeito. Pensa nele como a capa de um livro.</p>
+                <p>Já o <span class="destaque">footer</span> é o oposto: é o rodapé, o final da página. Normalmente tem direitos autorais, contato, links extras. É aquela parte que ninguém lê com tanta atenção, mas que sempre está lá no final.</p>
+            </article>
+
+            <article>
+                <h3>Main, Section e Article</h3>
+                <p>O <strong>main</strong> é o conteúdo principal da página, o que realmente importa. Só pode ter um main por página, e nada que já apareceu no header ou no footer deve se repetir aqui dentro.</p>
+                <p>Dentro do main, a gente usa <span class="destaque">section</span> pra separar partes do conteúdo que têm um tema em comum. E dentro de uma section, o <span class="destaque">article</span> é cada pedaço de conteúdo que faz sentido sozinho, como se fosse um post ou uma notícia separada.</p>
+            </article>
+        </section>
+
+        <aside>
+            <h3>E o Nav e o Aside?</h3>
+            <p>O <strong>nav</strong> é o menu de navegação, onde ficam os links principais do site. E o <strong>aside</strong> (essa caixinha aqui mesmo) serve pra mostrar uma informação extra, que complementa o assunto mas não é o ponto principal do texto.</p>
+        </aside>
+    </main>
+
+    <hr>
+
+    <!--Exercício 11-->
+    <header>
+        <h1>Meu Site</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!--Exercício 12-->
+    <article>
+        <h2>Evento gratuito vai falar sobre segurança da Inteligência Artificial no Brasil</h2>
+        <h3>Encontro online reúne especialistas para falar sobre riscos e oportunidades da IA</h3>
+
+        <p>Um evento sobre segurança da inteligência artificial vai acontecer de forma online no <strong>Brasil</strong>, reunindo especialistas que vão falar sobre como a IA afeta a sociedade, a economia e os governos.</p>
+        <p>O encontro vai usar como base um estudo internacional sobre o tema, feito com a ajuda de mais de 100 especialistas de vários países. A ideia é discutir como o Brasil pode se preparar para lidar com os riscos e as oportunidades dessa tecnologia.</p>
+    </article>
+
+    <hr>
+
+    <!--Exercício 14-->
+    <div id="destaques" style="background-color: #f0f0f0;">
+        <h3>Melhores Ofertas</h3>
+
+        <ol>
+            <li>Mochila</li>
+            <li>Caderno</li>
+            <li>Livro</li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <!--Exercício 15-->
+    <section>
+        <h2>Galeria</h2>
+
+        <figure>
+            <img src="https://w7.pngwing.com/pngs/249/407/png-transparent-minnie-mouse-cat-marie-kitten-aristogatos-cute-cat-marie-illustration-white-mammal-cat-like-mammal-thumbnail.png" width="150" height="150" style="object-fit: cover;" alt="Ilustração de uma gatinha branca fofa, sentada, com um laço rosa no pescoço e outro na cabeça, olhos grandes e expressivos, bigodes e rabo enrolado ao lado do corpo, ao lado de um pequeno coração rosa">
+            <figcaption>Gatinha branca fofa, sentada, usando laços rosa na cabeça e no pescoço, com olhos grandes e expressivos.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://img.magnific.com/vetores-premium/telemaque-cute-dog-sticker-cartoon-style-no-background-simple-v-fbb698a9a6d9440c890c3beec2781a04png-1-1-converti_853204-2.jpg" width="150" height="150" style="object-fit: cover;" alt="Sticker de um filhote de cachorro sentado, com pelagem marrom e branca, orelhas grandes e caídas, olhos grandes e focinho preto, sobre um fundo circular azul">
+            <figcaption>Filhote de cachorro sentado, com pelagem marrom e branca, orelhas grandes e caídas, em estilo sticker.</figcaption>
+        </figure>
+    </section>
+
+    <hr>
+
+    <!--Exercício 13 e 16-->
+    <footer>
+        <p>Desenvolvido por Grazi Braz <br>
+        Contato: <a href="mailto:java.php21@gmail.com">java.php21@gmail.com</a></p>
+        <p><span style="font-weight: bold">2026</span></p>
+        <p><a href="#topo">Voltar ao topo</a></p>
+    </footer>
+
+</body>
+</html>
