@@ -1,0 +1,2 @@
+<label for="mensagem">Mensagem:</label>
+<textarea id="mensagem" name="mensagem" rows="4" cols="30" maxlength="200" placeholder="Escreva sua mensagem..."></textarea>
