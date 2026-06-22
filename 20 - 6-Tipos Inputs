@@ -1,0 +1,25 @@
+<form>
+    <label for="nascimento">Data de nascimento:</label>
+    <input type="date" id="nascimento" name="nascimento">
+
+    <label for="arquivo">Envie um arquivo:</label>
+    <input type="file" id="arquivo" name="arquivo">
+
+    <label for="termos">
+        <input type="checkbox" id="termos" name="termos">
+        Aceito os termos
+    </label>
+
+    <p>Sexo:</p>
+    <label for="masculino">
+        <input type="radio" id="masculino" name="sexo" value="masculino">
+        Masculino
+    </label>
+
+    <label for="feminino">
+        <input type="radio" id="feminino" name="sexo" value="feminino">
+        Feminino
+    </label>
+
+    <button type="submit">Enviar</button>
+</form>
