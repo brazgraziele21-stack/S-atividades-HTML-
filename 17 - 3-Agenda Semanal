@@ -1,0 +1,53 @@
+<table>
+    <caption>Agenda Semanal</caption>
+
+    <tr>
+        <th>Horário</th>
+        <th>Segunda</th>
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+    </tr>
+
+    <tr>
+        <td>08:00</td>
+        <td colspan="5">Curso de Programação</td>
+    </tr>
+
+    <tr>
+        <td>13:30</td>
+        <td rowspan="2">Matemática</td>
+        <td>Leitura</td>
+        <td>Estudo livre</td>
+        <td>Matemática</td>
+        <td>Leitura</td>
+    </tr>
+
+    <tr>
+        <td>15:00</td>
+        <td>Leitura</td>
+        <td>Estudo livre</td>
+        <td>Matemática</td>
+        <td>Leitura</td>
+    </tr>
+</table>
+
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
