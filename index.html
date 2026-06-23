@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Atividades de Tabelas e Formulários</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -66,8 +66,7 @@
 
       <tfoot>
         <tr>
-          <td>3</td>
-          <td>Total de alunos:</td>
+          <td colspan="2">Total de alunos: 3</td>
         </tr>
       </tfoot>
     </table>
@@ -75,5 +74,212 @@
     <hr />
 
     <!--Exercício 3-->
+
+    <table>
+      <caption>
+        Agenda Semanal
+      </caption>
+
+      <tr>
+        <th>Horário</th>
+        <th>Segunda</th>
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+      </tr>
+
+      <tr>
+        <td>08:00</td>
+        <td colspan="5">Curso de Programação</td>
+      </tr>
+
+      <tr>
+        <td>13:30</td>
+        <td rowspan="2">Matemática</td>
+        <td>Leitura</td>
+        <td>Estudo livre</td>
+        <td>Matemática</td>
+        <td>Leitura</td>
+      </tr>
+
+      <tr>
+        <td>15:00</td>
+        <td>Leitura</td>
+        <td>Estudo livre</td>
+        <td>Matemática</td>
+        <td>Leitura</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <!--Exercício 4-->
+
+    <form>
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Digite seu nome"
+        required
+      />
+
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="exemplo@email.com"
+        required
+      />
+
+      <label for="senha">Senha:</label>
+      <input
+        type="password"
+        id="senha"
+        name="senha"
+        placeholder="Digite sua senha"
+        required
+      />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <hr />
+
+    <!--Exercício 5-->
+
+    <h3>Formulário com GET</h3>
+    <form method="get" action="">
+      <label for="nome-get">Nome:</label>
+      <input
+        type="text"
+        id="nome-get"
+        name="nome"
+        placeholder="Digite seu nome"
+      />
+
+      <label for="email-get">E-mail:</label>
+      <input
+        type="email"
+        id="email-get"
+        name="email"
+        placeholder="exemplo@email.com"
+      />
+
+      <button type="submit">Enviar (GET)</button>
+    </form>
+
+    <h3>Formulário com POST</h3>
+    <form method="post" action="">
+      <label for="nome-post">Nome:</label>
+      <input
+        type="text"
+        id="nome-post"
+        name="nome"
+        placeholder="Digite seu nome"
+      />
+
+      <label for="email-post">E-mail:</label>
+      <input
+        type="email"
+        id="email-post"
+        name="email"
+        placeholder="exemplo@email.com"
+      />
+
+      <button type="submit">Enviar (POST)</button>
+    </form>
+
+    <hr />
+
+    <!--Exercício 6-->
+
+    <form>
+      <label for="nascimento">Data de nascimento:</label>
+      <input type="date" id="nascimento" name="nascimento" />
+
+      <label for="arquivo">Envie um arquivo:</label>
+      <input type="file" id="arquivo" name="arquivo" />
+
+      <label for="termos">
+        <input type="checkbox" id="termos" name="termos" />
+        Aceito os termos
+      </label>
+
+      <p>Sexo:</p>
+      <label for="masculino">
+        <input type="radio" id="masculino" name="sexo" value="masculino" />
+        Masculino
+      </label>
+
+      <label for="feminino">
+        <input type="radio" id="feminino" name="sexo" value="feminino" />
+        Feminino
+      </label>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <hr />
+
+    <!--Exercício 7-->
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea
+      id="mensagem"
+      name="mensagem"
+      rows="4"
+      cols="30"
+      maxlength="200"
+      placeholder="Escreva sua mensagem..."
+    ></textarea>
+
+    <hr />
+
+    <!--Exercício 8-->
+
+    <label for="genero">Gênero musical:</label>
+    <select id="genero" name="genero">
+      <option value="rock">Rock</option>
+      <option value="pop">Pop</option>
+      <option value="rap">Rap</option>
+      <option value="sertanejo">Sertanejo</option>
+    </select>
+
+    <hr />
+
+    <!--Exercício 9-->
+
+    <h3>Áudio</h3>
+    <audio src="sigmamusicart-no-copyright-music-537751.mp3" controls></audio>
+
+    <h3>Vídeo</h3>
+    <video src="AMV].mp4" controls width="300"></video>
+
+    <hr />
+
+    <!--Exercício 10-->
+
+    <iframe
+      width="400"
+      height="250"
+      src="https://www.youtube.com/embed/eP-uTgPdNZE?si=PqyLkvaaOtmUyNCN"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
   </body>
 </html>
