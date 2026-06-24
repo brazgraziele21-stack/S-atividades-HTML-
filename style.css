@@ -1,7 +1,96 @@
-table,
-td,
-th {
-  border: 1px solid rgb(6, 6, 6);
-  border-collapse: collapse;
-  padding: 10px;
+body {
+  background: #f7f7f7;
+}
+
+a:hover {
+  color: rgb(153, 3, 143);
+  transition: color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1a131c;
+}
+
+input:focus-visible {
+  border-color: 2px solid #3f044f;
+  box-shadow: 0 0 8px rgb(7, 7, 7);
+  outline: 2px solid transparent;
+}
+
+li:first-child {
+  font-weight: bold;
+  color: blue;
+}
+
+li:last-child {
+  color: aqua;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid darkblue;
+  background-color: rgb(98, 1, 50);
+
+  transition: background 0.4s ease;
+}
+
+.caixa:hover {
+  background-color: rgb(255, 0, 221);
+  border: 1px solid rgb(64, 15, 64);
+}
+
+.propriedade {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(59, 60, 58);
+  border: 1px solid rgb(5, 5, 5);
+}
+
+.propriedade:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08);
+  background-color: rgb(5, 5, 5);
+  border: 1px solid rgb(59, 60, 58);
+}
+
+.box1 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(136, 8, 61);
+  border: 1px solid rgb(64, 15, 64);
+}
+
+.box1:hover {
+  animation: MovimentoX 1s ease-in-out forwards;
+}
+
+@keyframes MovimentoX {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(34, 133, 9);
+  border: 1px solid rgb(64, 15, 64);
+}
+
+.box2:hover {
+  animation: MovimentoY 1s ease-in-out forwards;
+}
+
+@keyframes MovimentoY {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
 }
