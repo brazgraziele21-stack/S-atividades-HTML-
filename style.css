@@ -1,0 +1,137 @@
+h1 {
+    color: rgb(1, 1, 32);
+}
+
+body {
+    background: #f7f7f7;
+  }
+  
+  a:hover {
+    color: rgb(153, 3, 143);
+    transition: color 0.2s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #1a131c;
+  }
+  
+  input:focus-visible {
+    border: 2px solid #3f044f;
+    box-shadow: 0 0 8px rgb(7, 7, 7);
+    outline: 2px solid transparent;
+  }
+  
+  li:first-child {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  li:last-child {
+    color: aqua;
+  }
+  
+  div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(3, 3, 4);
+    background-color: rgb(98, 1, 50);
+  
+    transition: background 0.4s ease;
+  }
+  
+  .caixa:hover {
+    background-color: rgb(255, 0, 221);
+    border: 1px solid rgb(64, 15, 64);
+  }
+  
+  .propriedade {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(59, 60, 58);
+    border: 1px solid rgb(5, 5, 5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .propriedade:hover {
+    transform: scale(1.08);
+    background-color: rgb(5, 5, 5);
+    border: 1px solid rgb(59, 60, 58);
+  }
+  
+  .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(225, 16, 103);
+    border: 1px solid rgb(64, 15, 64);
+    transition: transform 0.3s ease;
+  }
+  
+  .box1:hover {
+    transform: translateX(20px);
+  }
+  
+  .box2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(165, 30, 154);
+    border: 1px solid rgb(64, 15, 64);
+    transition: transform 0.3s ease;
+  }
+  
+  .box2:hover {
+    transform: translateY(20px);
+  }
+
+  button {
+    color: #3f044f;
+    transition: transform 0.3s ease;
+  }
+
+  button:hover{
+    background-color: rgb(180, 68, 217);
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  .bloco1 {
+    background-color: darkred;
+    transition: background 2s ease;
+  }
+
+  .bloco1:hover {
+    background-color: aqua;
+  }
+
+  .bloco2 {
+    background-color: darkred;
+    transition: background 2s linear;
+  }
+
+  .bloco2:hover {
+    background-color: aqua;
+  }
+
+  .bloco3 {
+    background-color: darkred;
+    transition: background 2s ease-in-out;
+  }
+
+  .bloco3:hover {
+    background-color: aqua;
+  }
+
+  .card {
+    width: 200px;
+    height: 150px;
+    background-color: #1a131c;
+
+    animation: fadeUp 0.4s ease-out forwards;
+
+  }
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(16px);
+     }
+    100% { opacity: 1; transform: translateY(0); 
+    }
+  }
