@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Aula 3 - Exercícios</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!--Exercício 1 - Entendendo o Box Model-->
+<div class="box">
+  Conteúdo
+</div>
+
+<hr>
+
+<!--Exercício 2 - Comparando content-box e border-box-->
+<div class="box1">content-box</div>
+<div class="box2">border-box</div>
+
+<hr>
+
+<!--Exercício 3 - Bordas e Sombras-->
+<div class="caixa1">solid</div>
+<div class="caixa2">dashed</div>
+<div class="caixa3">double</div>
+
+<hr>
+
+<!--Exercício 4 - Trabalhando com Backgrounds-->
+<div class="caixa-cor">Texto sobre cor sólida</div>
+<div class="caixa-cover"></div>
+<div class="caixa-contain"></div>
+
+<hr>
+
+<!--Exercício 5 - Gradientes e Múltiplos Fundos-->
+<div class="card">Cabeçalho com gradiente e imagem</div>
+
+<hr>
+
+<!--Exercício 6 - Herança e Especificidade-->
+<h2 id="titulo" class="titulo">Título de teste</h2>
+
+</body>
+</html>
