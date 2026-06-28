@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Produto Ajustado</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="card-produto.css">
+</head>
+<body>
+
+    <div class="card-wrapper">
+        <div class="product-card">
+            
+            <div class="card-header">
+                <div class="brand-logo">YourLogo</div>
+                
+                <div class="shoe-container">
+                    <div class="shoe-illustration"></div>
+                </div>
+
+                <div class="pagination-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <h1 class="product-title">Lorem Ipsum</h1>
+                <p class="product-description">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+                </p>
+
+                <div class="color-selector">
+                    <div class="color-circle color-1"></div>
+                    <div class="color-circle color-2"></div>
+                    <div class="color-circle color-3"></div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="product-price">$45,00</div>
+                    <button class="btn-add-cart">Add to cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
