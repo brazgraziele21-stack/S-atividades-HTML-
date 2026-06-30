@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estante Digital</title>
+<style>
+  :root {
+    --bg: #0d0d12;
+    --card-bg: #15151c;
+    --inner-bg: #1c1c25;
+    --texto: #e8e8ec;
+    --texto-suave: #9a9aa5;
+    --roxo: #8b5cf6;
+    --amarelo: #f5c518;
+    --verde: #22c55e;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--texto);
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    padding: 32px 16px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagina-titulo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .pagina-subtitulo {
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .btn-novo-livro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--roxo);
+    color: #0d0d12;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 24px;
+    cursor: pointer;
+    margin-bottom: 32px;
+  }
+
+  .btn-novo-livro:hover {
+    opacity: 0.9;
+  }
+
+  .secao {
+    width: 100%;
+    max-width: 640px;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    border-top: 4px solid var(--cor-secao);
+    padding: 28px 24px;
+    margin-bottom: 32px;
+  }
+
+  .secao-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .icone {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-secao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+  }
+
+  .secao-titulo {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .secao-subtitulo {
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-top: 2px;
+  }
+
+  .lista-vazia {
+    font-size: 13px;
+    color: var(--texto-suave);
+    font-style: italic;
+    padding: 12px 4px;
+  }
+
+  .livro {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: var(--inner-bg);
+    border-left: 4px solid var(--cor-secao);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+
+  .livro-capa {
+    width: 44px;
+    height: 60px;
+    min-width: 44px;
+    border-radius: 4px;
+    background-color: #2a2a35;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--texto-suave);
+    overflow: hidden;
+  }
+
+  .livro-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .livro-titulo {
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .livro-autor {
+    font-size: 13px;
+    color: var(--texto-suave);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .livro-acoes {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-acao {
+    background: none;
+    border: none;
+    color: var(--texto-suave);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+    line-height: 1;
+  }
+
+  .btn-acao:hover {
+    background-color: #2a2a35;
+    color: var(--texto);
+  }
+
+  .sec-quero-ler { --cor-secao: var(--roxo); }
+  .sec-lendo { --cor-secao: var(--amarelo); }
+  .sec-concluido { --cor-secao: var(--verde); }
+
+  /* Modal */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10;
+  }
+
+  .overlay.aberto {
+    display: flex;
+  }
+
+  .modal {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    border-top: 4px solid var(--roxo);
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .modal-titulo {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .campo {
+    margin-bottom: 16px;
+  }
+
+  .campo label {
+    display: block;
+    font-size: 13px;
+    color: var(--texto-suave);
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .campo input,
+  .campo select {
+    width: 100%;
+    background-color: var(--inner-bg);
+    border: 1px solid #2a2a35;
+    color: var(--texto);
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+  }
+
+  .campo input:focus,
+  .campo select:focus {
+    outline: none;
+    border-color: var(--roxo);
+  }
+
+  .modal-acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .btn-modal {
+    flex: 1;
+    padding: 11px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-cancelar {
+    background-color: transparent;
+    border: 1px solid #2a2a35;
+    color: var(--texto-suave);
+  }
+
+  .btn-salvar {
+    background-color: var(--roxo);
+    color: #0d0d12;
+  }
+</style>
+</head>
+<body>
+
+  <div class="pagina-titulo">📚 Minha Estante Digital</div>
+  <div class="pagina-subtitulo">Organize os livros que você quer ler, está lendo e já terminou</div>
+
+  <button class="btn-novo-livro" onclick="abrirModal()">+ Adicionar livro</button>
+
+  <div class="secao sec-quero-ler">
+    <div class="secao-header">
+      <div class="icone">⏳</div>
+      <div>
+        <div class="secao-titulo">Quero Ler</div>
+        <div class="secao-subtitulo" id="contador-quero-ler">0 livros na fila</div>
+      </div>
+    </div>
+    <div id="lista-quero-ler"></div>
+  </div>
+
+  <div class="secao sec-lendo">
+    <div class="secao-header">
+      <div class="icone">📖</div>
+      <div>
+        <div class="secao-titulo">Lendo Agora</div>
+        <div class="secao-subtitulo" id="contador-lendo">0 livros em progresso</div>
+      </div>
+    </div>
+    <div id="lista-lendo"></div>
+  </div>
+
+  <div class="secao sec-concluido">
+    <div class="secao-header">
+      <div class="icone">✅</div>
+      <div>
+        <div class="secao-titulo">Concluídos</div>
+        <div class="secao-subtitulo" id="contador-concluido">0 livros lidos</div>
+      </div>
+    </div>
+    <div id="lista-concluido"></div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="modal-titulo" id="modal-titulo">Adicionar livro</div>
+
+      <div class="campo">
+        <label>Título</label>
+        <input type="text" id="campo-titulo" placeholder="Ex: O Hobbit">
+      </div>
+
+      <div class="campo">
+        <label>Autor</label>
+        <input type="text" id="campo-autor" placeholder="Ex: J.R.R. Tolkien">
+      </div>
+
+      <div class="campo">
+        <label>Link da capa (opcional)</label>
+        <input type="text" id="campo-capa" placeholder="https://...">
+      </div>
+
+      <div class="campo">
+        <label>Status</label>
+        <select id="campo-status">
+          <option value="quero-ler">Quero Ler</option>
+          <option value="lendo">Lendo Agora</option>
+          <option value="concluido">Concluído</option>
+        </select>
+      </div>
+
+      <div class="modal-acoes">
+        <button class="btn-modal btn-cancelar" onclick="fecharModal()">Cancelar</button>
+        <button class="btn-modal btn-salvar" onclick="salvarLivro()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let livros = [
+      { id: 1, titulo: "O Hobbit", autor: "J.R.R. Tolkien", capa: "", status: "quero-ler" },
+      { id: 2, titulo: "Programador Autodidata", autor: "Cory Althoff", capa: "", status: "quero-ler" },
+      { id: 3, titulo: "Duna", autor: "Frank Herbert", capa: "", status: "lendo" },
+      { id: 4, titulo: "Entendendo Algoritmos", autor: "Aditya Bhargava", capa: "", status: "lendo" },
+      { id: 5, titulo: "Harry Potter e a Pedra Filosofal", autor: "J.K. Rowling", capa: "", status: "concluido" },
+      { id: 6, titulo: "48 Leis do Poder", autor: "Robert Greene", capa: "", status: "concluido" }
+    ];
+
+    let proximoId = 7;
+    let editandoId = null;
+
+    function renderizar() {
+      const grupos = {
+        "quero-ler": document.getElementById("lista-quero-ler"),
+        "lendo": document.getElementById("lista-lendo"),
+        "concluido": document.getElementById("lista-concluido")
+      };
+
+      Object.values(grupos).forEach(el => el.innerHTML = "");
+
+      const contagens = { "quero-ler": 0, "lendo": 0, "concluido": 0 };
+
+      livros.forEach(livro => {
+        contagens[livro.status]++;
+
+        const div = document.createElement("div");
+        div.className = "livro";
+
+        const capaHtml = livro.capa
+          ? `<div class="livro-capa" style="background-image:url('${livro.capa}')"></div>`
+          : `<div class="livro-capa">📕</div>`;
+
+        div.innerHTML = `
+          ${capaHtml}
+          <div class="livro-info">
+            <div class="livro-titulo">${livro.titulo}</div>
+            <div class="livro-autor">${livro.autor}</div>
+          </div>
+          <div class="livro-acoes">
+            <button class="btn-acao" onclick="editarLivro(${livro.id})">✎</button>
+            <button class="btn-acao" onclick="removerLivro(${livro.id})">✕</button>
+          </div>
+        `;
+
+        grupos[livro.status].appendChild(div);
+      });
+
+      Object.keys(grupos).forEach(status => {
+        if (contagens[status] === 0) {
+          grupos[status].innerHTML = '<div class="lista-vazia">Nenhum livro aqui ainda.</div>';
+        }
+      });
+
+      document.getElementById("contador-quero-ler").textContent = contagens["quero-ler"] + " livro(s) na fila";
+      document.getElementById("contador-lendo").textContent = contagens["lendo"] + " livro(s) em progresso";
+      document.getElementById("contador-concluido").textContent = contagens["concluido"] + " livro(s) lidos";
+    }
+
+    function abrirModal() {
+      editandoId = null;
+      document.getElementById("modal-titulo").textContent = "Adicionar livro";
+      document.getElementById("campo-titulo").value = "";
+      document.getElementById("campo-autor").value = "";
+      document.getElementById("campo-capa").value = "";
+      document.getElementById("campo-status").value = "quero-ler";
+      document.getElementById("overlay").classList.add("aberto");
+    }
+
+    function editarLivro(id) {
+      const livro = livros.find(l => l.id === id);
+      if (!livro) return;
+
+      editandoId = id;
+      document.getElementById("modal-titulo").textContent = "Editar livro";
+      document.getElementById("campo-titulo").value = livro.titulo;
+      document.getElementById("campo-autor").value = livro.autor;
+      document.getElementById("campo-capa").value = livro.capa;
+      document.getElementById("campo-status").value = livro.status;
+      document.getElementById("overlay").classList.add("aberto");
+    }
+
+    function fecharModal() {
+      document.getElementById("overlay").classList.remove("aberto");
+    }
+
+    function salvarLivro() {
+      const titulo = document.getElementById("campo-titulo").value.trim();
+      const autor = document.getElementById("campo-autor").value.trim();
+      const capa = document.getElementById("campo-capa").value.trim();
+      const status = document.getElementById("campo-status").value;
+
+      if (!titulo || !autor) {
+        alert("Preencha pelo menos o título e o autor.");
+        return;
+      }
+
+      if (editandoId) {
+        const livro = livros.find(l => l.id === editandoId);
+        livro.titulo = titulo;
+        livro.autor = autor;
+        livro.capa = capa;
+        livro.status = status;
+      } else {
+        livros.push({ id: proximoId++, titulo, autor, capa, status });
+      }
+
+      fecharModal();
+      renderizar();
+    }
+
+    function removerLivro(id) {
+      if (!confirm("Remover este livro da estante?")) return;
+      livros = livros.filter(l => l.id !== id);
+      renderizar();
+    }
+
+    renderizar();
+  </script>
+
+</body>
+</html>
