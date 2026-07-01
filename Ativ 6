@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Proporções, base e encolhimento</title>
+<style>
+  .container {
+    display: flex;
+    height: 100px;
+  }
+
+  .faixa-1 {
+    flex: 2 1 0;
+    background: blue;
+  }
+
+  .faixa-2 {
+    flex: 1 0 0;
+    background: green;
+  }
+
+  .faixa-3 {
+    flex: 1 1 0;
+    background: orange;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="faixa-1"></div>
+    <div class="faixa-2"></div>
+    <div class="faixa-3"></div>
+  </div>
+
+</body>
+</html>
