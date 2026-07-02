@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.card {
+  width: 250px;
+  height: 90px;
+  border: 1px solid black;
+  border-radius: 60%;
+  background-color: darkmagenta;
+
+  animation: fadeUp 5.4s linear infinite;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateX(0) translateY(0);
+    background-color: darkmagenta;
+  }
+  10% {
+    transform: translateX(calc(50vw - 125px)) translateY(0);
+    background-color: darkmagenta;
+  }
+  11% {
+    background-color: darkred;
+  }
+  20% {
+    transform: translateY(calc(50vh - 45px)) translateX(0);
+    background-color: darkred;
+  }
+  21% {
+    background-color: darkgoldenrod;
+  }
+  30% {
+    transform: translateY(0) translateX(calc(-50vw + 125px));
+    background-color: darkgoldenrod;
+  }
+  31% {
+    background-color: darkgreen;
+  }
+  40% {
+    transform: translateX(0) translateY(calc(-50vh + 45px));
+    background-color: darkgreen;
+  }
+  41% {
+    background-color: darkblue;
+  }
+
+  /* terminar... */
+
+  50% {
+    transform: translateY(80vh - 45px) translateX(50vw);
+    background-color: darkgreen;
+  }
+  51% {
+    background-color: darkblue;
+  }
+  60% {
+    transform: translateX(0) translateY(calc(-50vh + 45px));
+    background-color: darkgreen;
+  }
+  61% {
+    background-color: darkblue;
+  }
+  70% {
+    transform: translateX(0) translateY(calc(-50vh + 45px));
+    background-color: darkgreen;
+  }
+  71% {
+    background-color: darkblue;
+  }
+  80% {
+    transform: translateX(0) translateY(calc(-50vh + 45px));
+    background-color: darkgreen;
+  }
+  81% {
+    background-color: darkblue;
+  }
+  90% {
+    transform: translateX(0) translateY(calc(-50vh + 45px));
+    background-color: darkgreen;
+  }
+  91% {
+    background-color: darkblue;
+  }
+
+  100% {
+    transform: translateX(calc(-50vw + 125px)) translateX(0);
+    background-color: darkblue;
+  }
+}
