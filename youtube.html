@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade do YouTube</title>
+    <!-- Este é o único link que deve ficar no head para ativar os ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link rel="stylesheet" href="youtube.css" />
+  </head>
+  <body>
+    <!-- 1. BARRA SUPERIOR -->
+    <header class="barra-superior">
+      <div class="superior-esquerda">
+        <!-- Ícone das três barrinhas deitadas -->
+        <button class="botao-menu">
+          <i class="fi fi-br-menu-burger"></i>
+        </button>
+        <img src="youtube.png" class="logo" />
+      </div>
+
+      <div class="superior-centro">
+        <input type="text" placeholder="Pesquisar" class="campo-pesquisa" />
+        <!-- Ícone de pesquisa -->
+        <button class="botao-pesquisar">
+          <i class="fi fi-rr-search"></i>
+        </button>
+        <button class="botao-microfone">
+          <i class="fi fi-rr-microphone"></i>
+        </button>
+      </div>
+
+      <div class="superior-direita">
+        <!-- Ícone de sinal de + que vai no botão criar -->
+        <button class="botao-icone">
+          <i class="fi fi-br-plus"></i>
+        </button>
+        <button class="botao-icone">
+          <i class="fi fi-rr-bell"></i>
+        </button>
+        <div class="foto-perfil"></div>
+      </div>
+    </header>
+
+    <div class="conteiner-principal">
+      <!-- 2. MENU LATERAL COM TODOS OS SEUS BOTÕES -->
+      <aside class="menu-lateral">
+        <div class="grupo-menu">
+          <a href="#" class="item-ativo">
+            <i class="fi fi-sr-home"></i>
+            <span>Lar</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-bolt"></i>
+            <span>Shorts</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-following"></i>
+            <span>Assinaturas</span>
+          </a>
+        </div>
+
+        <div class="grupo-menu">
+          <h3 class="titulo-grupo">Você ➔</h3>
+          <a href="#">
+            <i class="fi fi-rr-time-past"></i>
+            <span>História</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-list-check"></i>
+            <span>Listas de reprodução</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-clock"></i>
+            <span>Assistir mais tarde</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-social-network"></i>
+            <span>Vídeos curtidos</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-download"></i>
+            <span>Downloads</span>
+          </a>
+        </div>
+
+        <div class="grupo-menu">
+          <h3 class="titulo-grupo">Mais do YouTube</h3>
+          <a href="#">
+            <i class="fi fi-rr-video-camera"></i>
+            <span>Experimente o Pre...</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-play-alt"></i>
+            <span>Música do YouTube</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-play"></i>
+            <span>YouTube Kids</span>
+          </a>
+        </div>
+
+        <div class="grupo-menu">
+          <h3 class="titulo-grupo">Explorar</h3>
+          <a href="#">
+            <i class="fi fi-rr-music"></i>
+            <span>Música</span>
+          </a>
+          <a href="#">
+            <i class="fi fi-rr-clapperboard"></i>
+            <span>Filmes</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- 3. ÁREA DOS VÍDEOS -->
+   
+  <div class="barra-tags">
+    <span class="tag-ativa">Todos</span>
+    <span>Podcasts</span>
+    <span>Estoicismo</span>
+    <span>Psicologia</span>
+    <span>Música</span>
+    <span>Teorias da mídia</span>
+    <span>Autoestima</span>
+    <span>Autoconfiança</span>
+    <span>Listas de reprodução</span>
+    <span>Música ambiente</span>
+  </div>
+  <button class="botao-proximo">
+    <i class="fi fi-rr-angle-right"></i>
+  </button>
+</div>
+
+
+        <div class="grade-videos">
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/t5QdFWsQX7M?si=-awf3TBByvWcvJxj"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 1</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/IjxBCCKIJH8?si=4giQjnA-F-vDLtUO"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 2</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/U3bZavG8qQY?si=jP4sEvpJqOY4q0bT"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 3</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/9Y1rH_8DWPE?si=NSoBZMdDCNTJBknE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 4</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/bsBWSevLkM8?si=yaHqo2fA3xEVlGHJ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 5</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-video">
+            <iframe
+              class="miniatura-video"
+              src="https://www.youtube.com/embed/2LD6sn7V9Rg?si=ghhFIul9NVEQttzb"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <div class="detalhes-video">
+              <div class="foto-canal"></div>
+              <div class="texto-video">
+                <h3>Título do Vídeo 6</h3>
+                <p>Nome do Canal</p>
+                <p>Visualizações Tempo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<!-- <i class="fi fi-sr-home"></i> -->
