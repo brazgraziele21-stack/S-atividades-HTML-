@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card de Produto</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="card-wrapper">
+      <div class="produto-card">
+        <div class="card-header">
+          <div class="caixa-sapato">
+            <img src="sapato.png" alt="Sapato" class="produto-image" />
+          </div>
+        </div>
+
+        <div class="card-body">
+          <h1 class="titulo-produto">Lorem Ipsum</h1>
+          <p class="descricao-produto">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut.
+          </p>
+
+          <div class="seletor-cores">
+            <div class="cores cor-1"></div>
+            <div class="cores cor-2"></div>
+            <div class="cores cor-3"></div>
+          </div>
+
+          <div class="card-footer">
+            <div class="preco-produto">$45,00</div>
+            <button class="botao-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
