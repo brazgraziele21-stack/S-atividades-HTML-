@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube - Flexbox</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <button class="menu-btn"><i class="fi fi-rr-menu-burger"></i></button>
+            <div class="logo">
+                <span style="color: #ff0000; font-size: 22px; margin-right: 4px; font-weight: bold;">▶</span>YouTube
+            </div>
+        </div>
+        <div class="nav-center">
+            <input type="text" placeholder="Procurar">
+            <button class="search-btn"><i class="fi fi-rs-search"></i></button>
+        </div>
+        <div class="nav-right">
+            <span class="icon"><i class="fi fi-br-plus"></i> Criar</span>
+            <span class="icon"><i class="fi fi-rs-bell"></i></span>
+            <div class="profile-pic">
+                <img src="imagemperfil.png" alt="Meu Perfil">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="side-item active"><i class="fi fi-rr-home"></i> Lar</div>
+            <div class="side-item"><i class="fi fi-rr-rocket-lunch"></i> Shorts</div>
+            <div class="side-item"><i class="fi fi-rr-add-folder"></i> Assinaturas</div>
+            <hr>
+            <div class="side-title">Você </div>
+            <div class="side-item"><i class="fi fi-rr-time-past"></i> Histórico</div>
+            <div class="side-item"><i class="fi fi-rr-list-check"></i> Listas de reprodução</div>
+            <div class="side-item"><i class="fi fi-rr-clock-five"></i> Assistir mais tarde</div>
+            <div class="side-item"><i class="fi fi-rr-social-network"></i> Vídeos curtidos</div>
+            <div class="side-item"><i class="fi fi-rr-download"></i> Downloads</div>
+            <hr>
+            <div class="side-title">Mais do YouTube</div>
+            <div class="side-item">Experimente o Pre...</div>
+            <div class="side-item"><i class="fi fi-rs-music-alt"></i> Música do YouTube</div>
+            <div class="side-item">YouTube Kids</div>
+            <hr>
+            <div class="side-title">Explorar</div>
+            <div class="side-item"><i class="fi fi-rs-music-alt"></i> Música</div>
+            <div class="side-item">Filmes</div>
+            <div class="side-item">Ao vivo</div>
+            <div class="side-item">Mostrar mais</div>
+            <hr>
+            <div class="side-item">Histórico de relatóri...</div>
+        </aside>
+
+        <main class="content-area">
+         
+            <div class="categories-wrapper">
+                <nav class="categories">
+                    <span class="category-chip active">Todos</span>
+                    <span class="category-chip">Podcasts</span>
+                    <span class="category-chip">Psicologia Clínica</span>
+                    <span class="category-chip">Consciência</span>
+                    <span class="category-chip">Estoicismo</span>
+                    <span class="category-chip">Música</span>
+                    <span class="category-chip">Jogos</span>
+                    <span class="category-chip">Ciências Sociais</span>
+                    <span class="category-chip">Autoconfiança</span>
+                    <span class="category-chip">Semanas</span>
+                    <span class="category-chip">Inteligência</span>
+                    <span class="category-chip">Ao vivo</span>
+                    <span class="category-chip">Metas</span>
+                    <span class="category-chip">Fortuna</span>
+                    <span class="category-chip">Música ambiente</span>
+                </nav>
+                <button class="next-category-btn"><i class="fi fi-rr-angle-right"></i></button>
+            </div>
+
+            <section class="video-grid">
+                
+                <!-- Vídeo 1 - Fábio Akita -->
+                <div class="video-card">
+                    <a href="https://youtu.be" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capafabioakita.png" alt="Capa Fábio Akita">
+                        <span class="video-time">47:16</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="fabioakita.png" alt="Fábio Akita">
+                        </div>
+                        <div class="video-text">
+                            <h3>Entendendo o Back-End para Programadores Iniciantes (Parte 2) | Série "Começando aos 40"</h3>
+                            <p class="channel-name">Fábio Akita</p>
+                            <p class="video-stats">519 mil visualizações • há 2 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 2 - Eslen Delanogare -->
+                <div class="video-card">
+                    <a href="https://youtu.be" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capaeslendelanogare.png" alt="Capa Eslen Delanogare">
+                        <span class="video-time">11:46</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="eslendelanogare.png" alt="Eslen Delanogare">
+                        </div>
+                        <div class="video-text">
+                            <h3>Como evitar emburrecer na era dos smartphones</h3>
+                            <p class="channel-name">Eslen Delanogare</p>
+                            <p class="video-stats">132 mil visualizações • há 8 dias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 3 - Luana Carolina -->
+                <div class="video-card">
+                    <a href="https://youtu.be_" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capaluanacarolina.png" alt="Capa Luana Carolina">
+                        <span class="video-time">15:24</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="luanacarolina.png" alt="Luana Carolina">
+                        </div>
+                        <div class="video-text">
+                            <h3>O segredo das pessoas altamente confiantes e produtivas</h3>
+                            <p class="channel-name">Luana Carolina</p>
+                            <p class="video-stats">563 mil visualizações • há 3 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 4 - Bruno Perini -->
+                <div class="video-card">
+                    <a href="https://youtube.com" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capabrunoperini.png" alt="Capa Bruno Perini">
+                        <span class="video-time">22:15</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="brunoperini.png" alt="Bruno Perini">
+                        </div>
+                        <div class="video-text">
+                            <h3>Como montar um plano realista para viver de renda nos próximos anos</h3>
+                            <p class="channel-name">Bruno Perini - Você MAIS Rico</p>
+                            <p class="video-stats">489 mil visualizações • há 1 mês</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 5 - Joel Jota -->
+                <div class="video-card">
+                    <a href="https://youtu.be" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capajoeljota.png" alt="Capa Joel Jota">
+                        <span class="video-time">1:12:40</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="joeljota.png" alt="Joel Jota">
+                        </div>
+                        <div class="video-text">
+                            <h3>SEJA DISCIPLINADO NA VIDA (JOEL JOTA) | MOTIVAÇÃO PARA VIDA</h3>
+                            <p class="channel-name">Joel Jota</p>
+                            <p class="video-stats">2,1 mi de visualizações • há 5 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 6 - Thiago Nigro -->
+                <div class="video-card">
+                    <a href="https://youtu.be" target="_blank" class="thumbnail">
+                        <img class="thumb-img" src="capathiagonigro.png" alt="Capa Thiago Nigro">
+                        <span class="video-time">23:37</span>
+                    </a>
+                    <div class="video-info">
+                        <div class="channel-pic">
+                            <img src="thiagonigro.png" alt="Thiago Nigro">
+                        </div>
+                        <div class="video-text">
+                            <h3>O Homem Mais Rico Da História Do Brasil (LUIZ BARSI)</h3>
+
+                            <p class="channel-name">O Primo Rico</p>
+                            <p class="video-stats">1,4 mi de visualizações • há 4 meses</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
