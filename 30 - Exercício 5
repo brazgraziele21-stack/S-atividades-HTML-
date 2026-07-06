@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 5 - Alinhamento</title>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    .grade-alinhada {
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(2, 150px);
+        height: 100vh;
+        gap: 10px;
+        place-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .quadrado {
+        width: 60px;
+        height: 60px;
+        background-color: #e67e22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="grade-alinhada">
+        <div class="quadrado">1</div>
+        <div class="quadrado">2</div>
+        <div class="quadrado">3</div>
+        <div class="quadrado">4</div>
+    </div>
+
+</body>
+</html>
