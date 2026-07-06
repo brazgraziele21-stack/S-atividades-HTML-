@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.grade-fixa {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  gap: 4px;
+  margin-bottom: 40px;
+}
+
+.grade-flexivel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 4px;
+}
+
+.celula {
+  background-color: #4a90d9;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}

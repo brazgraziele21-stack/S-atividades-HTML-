@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+}
+
+.item {
+  background-color: #50b06c;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  font-size: 18px;
+}
+
+.item1 {
+  grid-column: span 2;
+}
+
+.item5 {
+  grid-row: span 2;
+}
