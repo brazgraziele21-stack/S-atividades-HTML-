@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 2 - Span</title>
+<style>
+    .grade {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        gap: 8px;
+    }
+
+    .item {
+        background-color: #50b06c;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        font-size: 18px;
+    }
+
+    .item1 {
+        grid-column: span 2;
+    }
+
+    .item5 {
+        grid-row: span 2;
+    }
+</style>
+</head>
+<body>
+
+    <div class="grade">
+        <div class="item item1">Item 1 (2 colunas)</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+        <div class="item item4">Item 4</div>
+        <div class="item item5">Item 5 (2 linhas)</div>
+        <div class="item item6">Item 6</div>
+    </div>
+
+</body>
+</html>
