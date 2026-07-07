@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards de Produto Responsivos</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #ffffff;
+        padding: 40px 20px;
+      }
+
+      .grade-produtos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-items: center;
+      }
+
+      @media (min-width: 600px) {
+        .grade-produtos {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grade-produtos {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .card-wrapper {
+        background-color: #f7c343;
+        padding: 24px;
+        width: 100%;
+        max-width: 380px;
+      }
+
+      .produto-card {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card-header {
+        background-color: #faf2e6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 280px;
+      }
+
+      .caixa-sapato {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .produto-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 35px 25px;
+        text-align: center;
+      }
+
+      .titulo-produto {
+        color: #4a1503;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .descricao-produto {
+        color: #7a6a65;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .seletor-cores {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 40px;
+      }
+
+      .cores {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .cor-1 {
+        background-color: #f38b72;
+      }
+
+      .cor-2 {
+        background-color: #55b9b9;
+      }
+
+      .cor-3 {
+        background-color: #f1b86b;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .preco-produto {
+        font-size: 28px;
+        font-weight: 700;
+        color: #4a1503;
+        position: relative;
+        z-index: 2;
+      }
+
+      .botao-add {
+        background-color: transparent;
+        border: 2px solid #4a1503;
+        color: #4a1503;
+        padding: 10px 24px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2c1930;
+        color: #fff;
+        padding: 16px 24px;
+      }
+
+      .cabecalho h1 {
+        font-size: 1.5rem;
+      }
+
+      /* Botão visível por padrão (mobile-first) */
+      .botao-menu {
+        display: block;
+        background-color: #e94560;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .botao-menu:hover {
+        background-color: #c73650;
+      }
+
+      /* Em telas maiores que 768px, o botão desaparece */
+      @media (min-width: 768px) {
+        .botao-menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grade-produtos">
+      <!-- Card 1 -->
+      <div class="card-wrapper">
+        <div class="produto-card">
+          <div class="card-header">
+            <div class="caixa-sapato">
+              <img src="sapato.png" alt="Sapato" class="produto-image" />
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="titulo-produto">Lorem Ipsum</h1>
+            <p class="descricao-produto">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut.
+            </p>
+            <div class="seletor-cores">
+              <div class="cores cor-1"></div>
+              <div class="cores cor-2"></div>
+              <div class="cores cor-3"></div>
+            </div>
+            <div class="card-footer">
+              <div class="preco-produto">$45,00</div>
+              <button class="botao-add">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-wrapper">
+        <div class="produto-card">
+          <div class="card-header">
+            <div class="caixa-sapato">
+              <img src="sapato.png" alt="Sapato" class="produto-image" />
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="titulo-produto">Dolor Sit</h1>
+            <p class="descricao-produto">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut.
+            </p>
+            <div class="seletor-cores">
+              <div class="cores cor-1"></div>
+              <div class="cores cor-2"></div>
+              <div class="cores cor-3"></div>
+            </div>
+            <div class="card-footer">
+              <div class="preco-produto">$52,00</div>
+              <button class="botao-add">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-wrapper">
+        <div class="produto-card">
+          <div class="card-header">
+            <div class="caixa-sapato">
+              <img src="sapato.png" alt="Sapato" class="produto-image" />
+            </div>
+          </div>
+          <div class="card-body">
+            <h1 class="titulo-produto">Amet Consectetuer</h1>
+            <p class="descricao-produto">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy nibh euismod tincidunt ut.
+            </p>
+            <div class="seletor-cores">
+              <div class="cores cor-1"></div>
+              <div class="cores cor-2"></div>
+              <div class="cores cor-3"></div>
+            </div>
+            <div class="card-footer">
+              <div class="preco-produto">$60,00</div>
+              <button class="botao-add">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
