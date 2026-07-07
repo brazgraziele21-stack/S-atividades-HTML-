@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercício 2 - Botão de Menu Mobile</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    color: #fff;
+    padding: 16px 24px;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Botão visível por padrão (mobile-first) */
+  .botao-menu {
+    display: block;
+    background-color: #e94560;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .botao-menu:hover {
+    background-color: #c73650;
+  }
+
+  /* Em telas maiores que 768px, o botão desaparece */
+  @media (min-width: 768px) {
+    .botao-menu {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1>Meu Site</h1>
+    <button class="botao-menu">Menu</button>
+  </header>
+
+</body>
+</html>
