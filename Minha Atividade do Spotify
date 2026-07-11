@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Grid</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 64px 1fr;
+      overflow: hidden;
+    }
+
+    .cabecalho {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto 1fr auto auto;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 16px;
+      background-color: #000000;
+      height: 64px;
+    }
+
+    .logo-spotify {
+      display: grid;
+      place-items: center;
+      place-content: center;
+      padding-left: 12px;
+      padding-right: 16px;
+    }
+
+    .logo-spotify i.icone-logo {
+      color: #ffffff;
+      font-size: 26px;
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .botao-home {
+      background-color: #1f1f1f;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .botao-home i {
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .barra-busca {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+      background-color: #1f1f1f;
+      border-radius: 500px;
+      padding: 0 16px;
+      width: 400px;
+      height: 48px;
+      border: 1px solid transparent;
+    }
+
+    .barra-busca:hover {
+      background-color: #2a2a2a;
+      border-color: #727272;
+    }
+
+    .barra-busca i {
+      color: #b3b3b3;
+      font-size: 18px;
+    }
+
+    .barra-busca input {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .links-cabecalho {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .links-cabecalho span {
+      color: #b3b3b3;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .links-cabecalho span:hover {
+      color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    .acoes-cabecalho {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .botao-inscrever {
+      color: #b3b3b3;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .botao-inscrever:hover {
+      color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    .botao-entrar {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 8px 32px;
+      border-radius: 500px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .botao-entrar:hover {
+      transform: scale(1.04);
+    }
+
+    .container-principal {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      padding: 0 8px 8px 8px;
+      gap: 8px;
+      height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    .menu-lateral {
+      background-color: #121212;
+      border-radius: 8px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 16px 20px;
+    }
+
+    .topo-biblioteca {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .titulo-biblioteca {
+      color: #b3b3b3;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .botao-criar {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cartoes-biblioteca {
+      display: grid;
+      grid-auto-rows: max-content;
+      gap: 16px;
+      overflow-y: auto;
+    }
+
+    .cartao-promo {
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+
+    .cartao-promo h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cartao-promo p {
+      font-size: 12px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .botao-branco {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 6px 16px;
+      border-radius: 500px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .rodape-lateral {
+      padding: 16px;
+      font-family: sans-serif;
+    }
+
+    .links-rodape {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr));
+      gap: 12px 24px;
+      margin-bottom: 12px;
+    }
+
+    .links-rodape-unitario {
+      color: #fffdfd;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    .links-rodape span,
+    .links-rodape-unitario span {
+      color: #a7a7a7;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .links-rodape span:hover,
+    .links-rodape-unitario span:hover {
+      color: #ffffff;
+    }
+
+    .seletor-idioma {
+      border: 1px solid #727272;
+      border-radius: 500px;
+      padding: 6px 12px;
+      display: inline-grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+
+    .seletor-idioma span {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .seletor-idioma:hover {
+      border-color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    .area-conteudo {
+      background:
+        linear-gradient(to bottom, #3f1212 0px, #121212 200px), #121212;
+      border-radius: 8px;
+      padding: 16px 24px;
+      overflow-y: auto;
+    }
+
+    .secao {
+      margin-bottom: 40px;
+    }
+
+    .cabecalho-secao {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .cabecalho-secao h2 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .cabecalho-secao h2:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .mostrar-tudo {
+      color: #b3b3b3;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .mostrar-tudo:hover {
+      text-decoration: underline;
+    }
+
+    .grade-cartoes,
+    .grade-artistas {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      width: 100%;
+    }
+
+    .cartao-musica,
+    .cartao-artista {
+      background-color: transparent;
+      padding: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cartao-musica:hover,
+    .cartao-artista:hover {
+      background-color: #1f1f1f;
+    }
+
+    .cartao-musica img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .cartao-artista img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
+
+    .cartao-musica h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cartao-musica p {
+      color: #b3b3b3;
+      font-size: 12px;
+      line-height: 18px;
+      overflow: hidden;
+    }
+
+    .cartao-artista {
+      background-color: #181818;
+      padding: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cartao-artista:hover {
+      background-color: #282828;
+    }
+
+    .cartao-artista img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .cartao-artista h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cartao-artista p {
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+
+    .container-imagem {
+      position: relative;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .botao-play-verde {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      background-color: #1db954;
+      color: #000000;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s ease;
+    }
+
+    .botao-play-verde i {
+      font-size: 18px;
+      margin-left: 4px;
+      color: #000000;
+    }
+
+    .cartao-musica:hover .botao-play-verde,
+    .cartao-artista:hover .botao-play-verde {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .botao-play-verde:hover {
+      transform: scale(1.05);
+      background-color: #1ed760;
+    }
+  </style>
+  <body>
+    <header class="cabecalho">
+      <div class="logo-spotify">
+        <i class="fi fi-brands-spotify icone-logo"></i>
+      </div>
+
+      <div></div>
+      <!-- espaçador 1: empurra o grupo (casa+busca) para o centro -->
+
+      <div class="botao-home"><i class="fi fi-rr-home"></i></div>
+
+      <div class="barra-busca">
+        <i class="fi fi-rs-search"></i>
+        <input type="text" placeholder="O que você quer ouvir?" />
+        <i class="fi fi-rr-basket-shopping-simple"></i>
+      </div>
+
+      <div></div>
+      <!-- espaçador 2: empurra os links para a direita -->
+
+      <div class="links-cabecalho">
+        <span>Premium</span>
+        <span>Suporte</span>
+        <span>Baixar</span>
+      </div>
+      <div class="acoes-cabecalho">
+        <span class="botao-inscrever">
+          <i class="fi fi-rr-download"></i> Instalar aplicativo
+        </span>
+        <span class="botao-inscrever">Inscrever-se</span>
+        <span class="botao-entrar">Entrar</span>
+      </div>
+    </header>
+
+    <div class="container-principal">
+      <aside class="menu-lateral">
+        <div class="topo-biblioteca">
+          <span class="titulo-biblioteca">Sua Biblioteca</span>
+          <div class="botao-criar"><i class="fi fi-rr-plus"></i> Criar</div>
+        </div>
+
+        <div class="cartoes-biblioteca">
+          <div class="cartao-promo">
+            <h4>Crie sua primeira playlist</h4>
+            <p>É fácil, vamos te ajudar.</p>
+            <span class="botao-branco">Criar playlist</span>
+          </div>
+
+          <div class="cartao-promo">
+            <h4>Que tal seguir um podcast novo?</h4>
+            <p>Avisaremos você sobre novos episódios.</p>
+            <span class="botao-branco">Explorar podcasts</span>
+          </div>
+        </div>
+
+        <div class="rodape-lateral">
+          <div class="links-rodape">
+            <span>Legal</span>
+            <span>Segurança e Centro de privacidade</span>
+            <span>Politíca de privacidade</span>
+            <span>Cookies</span>
+            <span>Sobre anúncios</span>
+            <span>Acessibilidade</span>
+          </div>
+
+          <!-- O último Cookies fica separado embaixo -->
+          <div class="links-rodape-unitario">
+            <span>Cookies</span>
+          </div>
+          <div class="seletor-idioma">
+            <i class="fi fi-rr-globe"></i>
+            <span>Português do Brasil</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="area-conteudo">
+        <section class="secao">
+          <div class="cabecalho-secao">
+            <h2>Músicas em alta</h2>
+            <span class="mostrar-tudo">Mostrar tudo</span>
+          </div>
+          <div class="grade-cartoes">
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="paupratodaobra.png" alt="Capa 1" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Pau Pra Toda Obra</h3>
+              <p>Mc Jacaré, MC Ryan SP, Mc Lele JP</p>
+            </div>
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="balaalojada.png" alt="Capa 2" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Bala Alojada</h3>
+              <p>Gusttavo Lima</p>
+            </div>
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="cuidadopet.png" alt="Capa 3" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Cuida do Pet</h3>
+              <p>Oldilla, Mc Iguinho Ct</p>
+            </div>
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="valeapenaouvirdnv.png" alt="Capa 4" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Vale a Pena Ouvir de Novo</h3>
+              <p>Zé Vitor & Rael</p>
+            </div>
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="pacmandepanicat.png" alt="Capa 5" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Pacman de Panicat</h3>
+              <p>DJ Japa NK, Mc Poze do Rodo</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="secao">
+          <div class="cabecalho-secao">
+            <h2>Artistas populares</h2>
+            <span class="mostrar-tudo">Mostrar tudo</span>
+          </div>
+          <div class="grade-artistas">
+            <div class="cartao-artista">
+              <div class="container-imagem">
+                <img src="henriqueejuliano.png" alt="Artista 1" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Henrique & Juliano</h3>
+              <p>Artista</p>
+            </div>
+            <div class="cartao-artista">
+              <div class="container-imagem">
+                <img src="diegoevictorhugo.png" alt="Artista 2" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Diego & Victor Hugo</h3>
+              <p>Artista</p>
+            </div>
+            <div class="cartao-artista">
+              <div class="container-imagem">
+                <img src="grupomenosemais.png" alt="Artista 3" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Grupo Menos É Mais</h3>
+              <p>Artista</p>
+            </div>
+            <div class="cartao-artista">
+              <div class="container-imagem">
+                <img src="jorgeemateus.png" alt="Artista 4" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Jorge & Mateus</h3>
+              <p>Artista</p>
+            </div>
+            <div class="cartao-artista">
+              <div class="container-imagem">
+                <img src="zenetoecristiano.png" alt="Artista 5" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Zé Neto & Cristiano</h3>
+              <p>Artista</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="secao">
+          <div class="cabecalho-secao">
+            <h2>Singles e álbuns que todo mundo gosta</h2>
+            <span class="mostrar-tudo">Mostrar tudo</span>
+          </div>
+
+          <div class="grade-cartoes">
+            <!-- Card 1 -->
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="whitenoise.png" alt="White Noise" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>White Noise (Sleep & Relaxation Sounds)</h3>
+              <p>Sleepy John</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="manifestomusical.png" alt="Manifesto Musical 2" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Manifesto Musical 2 (Ao Vivo / Vol.1)</h3>
+              <p>Henrique & Juliano</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="mayhem.png" alt="MAYHEM" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>MAYHEM</h3>
+              <p>Lady Gaga</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="333.png" alt="333" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>333</h3>
+              <p>Matuê</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="cartao-musica">
+              <div class="container-imagem">
+                <img src="bemvindomeumundo.webp" alt="Bem-Vindo ao Meu Mundo" />
+                <button class="botao-play-verde">
+                  <i class="fi fi-sr-play"></i>
+                </button>
+              </div>
+              <h3>Bem-Vindo ao Meu Mundo - Forró &...</h3>
+              <p>Wesley Safadão</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
